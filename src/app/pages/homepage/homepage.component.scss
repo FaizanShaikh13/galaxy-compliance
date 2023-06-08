@@ -1,0 +1,17 @@
+.light-blue-bg{
+    background-color: rgba(4, 173, 219, 0.1);;
+}
+::ng-deep .accordion > .panel {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+// .saudi-fda{
+//     right: 0;
+//     bottom: 0;
+//     height: 5px;
+//     border: 2px solid #FBBC09;
+//     border-color:  #FBBC09 transparent ;
+//     border-radius: 20px;
+//     // border-radius: 50%/100px 100px 0 0;
+// }

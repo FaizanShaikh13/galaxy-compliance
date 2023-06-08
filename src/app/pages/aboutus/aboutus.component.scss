@@ -1,0 +1,65 @@
+.right-side {
+    gap: 16px;
+    grid-area: right;
+    display: grid;
+    grid-template-areas:
+        "a b"
+        "c c";
+    width: 560px;
+    line-height: 16px;
+    font-family: "Urbanist";
+    font-weight: 500;
+
+    @media screen and (max-width:700px) {
+        grid-template-areas:
+        "a"
+        "b"
+        "c";
+        .email{
+            justify-content: start;
+            margin-top: 20px;
+        }
+    }
+    .info {
+        display: flex;
+        gap: calc(0.0714285714285714em * 5);
+
+        .title {
+            font-size: 20px;
+            @media screen and (max-width:1080px) {
+                 font-size: 16px;
+            }
+        }
+
+        span.gradient-text {
+            font-size: 24px;
+            line-height: 130%;
+            color: #525252;
+            @media screen and (max-width:1080px) {
+                font-size: 18px;
+                line-height: 27px
+           }
+        }
+    }
+
+    .tel {
+        grid-area: a;
+    }
+
+    .email {
+        grid-area: b;
+    }
+
+    .location {
+        grid-area: c;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .list-disc{
+        flex-direction: column;
+        li{
+            text-decoration: underline;
+        }
+    }
+}

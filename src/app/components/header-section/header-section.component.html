@@ -1,0 +1,57 @@
+<header>
+  <div class="container-custom m-auto flex justify-between items-center mt-5 px-3">
+    <div [routerLink]="['/']"><img src="../../../assets/common/default-logo.png" alt="" /></div>
+    <div
+      class="gap-9 md:flex justify-between items-center font-urbanist font-bold text-base text-black-525 hidden"
+    >
+      <span class="cursor-pointer" [routerLink]="['/about-us']">About Us</span>
+      <div class="w-[2px] border border-[#E5E5E5] h-7"></div>
+      <div class="flex gap-2 cursor-pointer">
+        <mat-icon>call</mat-icon>
+        <span> Contact Us</span>
+      </div>
+      <button
+        mat-stroked-button
+        color="primary"
+        class="font-urbanist font-bold text-base !text-black-525"
+      >
+      <mat-icon class="mr-2">date_range</mat-icon>
+       <span> Book a Meeting </span>
+      </button>
+    </div>
+    <div class="sidenav float-right md:hidden block">
+      <mat-icon class="material-symbols-outlined" (click)="sidebarVisible = true" >
+        menu
+      </mat-icon>
+      <!-- <p-button type="button" class="mr-2" (click)="display = true" icon="pi pi-arrow-left"></p-button> -->
+      <p-sidebar
+        position="right"
+        [(visible)]="sidebarVisible"
+        [transitionOptions]="'250ms'"
+      >
+        <div class="d-flex flex-column">
+          <div
+            class="btn-nav"
+            
+          >
+            About Us
+          </div>
+          <div
+            class="btn-nav"
+           
+            routerLinkActive="gradient-text"
+            
+          >
+            Contact Us
+          </div>
+    
+        </div>
+      </p-sidebar>
+    </div>
+  </div>
+
+  
+
+</header>
+
+

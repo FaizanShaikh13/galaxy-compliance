@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    padding: 0;
+    margin: 0;
+    // font-family: 'Urbanist', sans-serif;
+    box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container-custom{
+    max-width: 1536px !important;
+}
+
+.p-sidebar{
+    background-color: #03A2B5;
+    z-index: 1004 !important;
+
+    // .p-sidebar-content{
+    //     background-color:  #03A2B5;
+    //     height:100%;
+    // }
+}
+
+.mat-expansion-panel-header{
+    height: 100%;
+}
