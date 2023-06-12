@@ -1,6 +1,6 @@
 <footer class="container-custom mt-20 urbanist m-auto">
   <div class="container-custom footer-container">
-    <div class="footer-absolute flex justify-between items-center">
+    <!-- <div class="footer-absolute flex justify-between items-center">
       <div
         *ngIf="contents[currentRoute]?.banner?.content; else default"
         class="text"
@@ -12,7 +12,6 @@
           <br />
         </ng-container>
 
-        <!-- {{ contents[currentRoute].banner.content }} -->
       </div>
       <ng-template #default>
         <div class="text">
@@ -38,23 +37,6 @@
         />
       </button>
 
-      <!-- <button
-        *ngIf="!contents[currentRoute]"
-        class="button flex"
-        mat-stroked-button
-        color="primary"
-        (click)="bookMeeting('')"
-      >
-        <span class="gradient-text text-primary"> Book a meeting </span>
-        <span>
-
-          <img src="../../../assets/footer/topRightArrow.svg" alt="Arrow "
-          width="16"
-          height="16"
-          loading="lazy"
-          />
-        </span>
-      </button> -->
       <button    
       mat-stroked-button
       class="primary bg-[#fff] font-urbanist text-xl font-semibold text-primary"
@@ -66,8 +48,30 @@
 
       </div>
       </button>
+    </div> -->
+    <div class="absolute-footer absolute  max-w-[1500px] w-[94%]">
+      <div class="relative h-[202px]">
+        <img src="../../../assets/footer/footer-banner.png" class="w-[94%] h-full hidden sm:block" alt="">
+        <img src="../../../assets/footer/mobile-banner.png" class="sm:hidden block w-[94%] h-full"  alt="">
+      </div>
+      <div class="absolute top-0 w-[94%] h-full sm:px-16 px-5 flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-5">
+        <div class="font-urbanist text-[#fff] md:text-2xl xl:text-3xl font-semibold text-xl">
+          Interested to know more? <br />
+          Book a meeting with us now!
+        </div>
+        <button    
+          mat-stroked-button
+          class="primary bg-[#fff] font-urbanist text-xl font-semibold text-primary !py-3 !px-6 lg:!py-5 lg:!px-10 !rounded-lg"
+    
+          >
+          <div class="flex gap-3 text-base md:text-lg xl:text-xl font-urbanist">
+            <span>Book a Meeting</span>
+            <img src="../../../assets/footer/topRightArrow.svg" alt="">
+    
+          </div>
+          </button>
+      </div>
     </div>
-
     <div class="left-side">
       <div class="logo">
         <img
