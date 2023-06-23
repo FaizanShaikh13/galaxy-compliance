@@ -16,20 +16,13 @@ export class FooterSectionComponent implements OnInit {
     // this.detectRouteChange();
   }
   calendly: any;
+  bookMeeting() {
+    this.calendly = document.getElementsByClassName('calendly-badge-content');
 
-  bookMeeting(val: any) {
-
-    // if(val == 'Learn more'){
-    //   this.router.navigate(['/contact-us']);
-    //   return;
-    // }
-    // this.calendly = document.getElementsByClassName('calendly-badge-content');
-
-    // for (var i = 0; i < this.calendly.length; i++) {
-    //   this.calendly[i].click();
-    // }
+    for (var i = 0; i < this.calendly.length; i++) {
+      this.calendly[i].click();
+    }
   }
-
   detectRouteChange(): void {
     // this.router.events.subscribe((event) => {
     //   // event instanceof NavigationStart ||

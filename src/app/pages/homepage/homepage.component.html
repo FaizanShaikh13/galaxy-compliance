@@ -25,7 +25,9 @@
         <span> Contact Us </span>
       </button>
       <button mat-stroked-button color="primary"
-        class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none">
+        class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none"
+        (click)="bookMeeting()"
+        >
         <mat-icon class="mr-2">date_range</mat-icon>
         <span> Book a Meeting </span>
       </button>
@@ -188,13 +190,12 @@
       <div class="w-[25%] bg-primary h-[2px] max-w-[220px] min-w-[65px]"></div>
     </div>
     <div>
-      <p-carousel
+      <!-- <p-carousel
         [value]="testimonials"
         [numVisible]="3"
         [numScroll]="3"
         [circular]="false"
       >
-      <!-- [responsiveOptions]="responsiveOptions" -->
 
         <ng-template let-product pTemplate="item">
                 <div [innerHTML]="product?.data">
@@ -221,7 +222,7 @@
      
         
         </ng-template>
-      </p-carousel>
+      </p-carousel> -->
       <div class="flex-col justify-between items-center gap-3">
         <img src="../../../assets/images/“.png" class="mb-9" alt="" />
         <div class="flex lg:flex-row flex-col  justify-between items-center gap-3">
@@ -320,7 +321,9 @@
         <span> Contact Us </span>
       </button>
       <button mat-stroked-button color="primary"
-        class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none">
+        class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none"
+        (click)="bookMeeting()"
+        >
         <mat-icon class="mr-2">date_range</mat-icon>
         <span> Book a Meeting </span>
       </button>

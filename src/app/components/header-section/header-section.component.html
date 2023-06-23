@@ -4,7 +4,35 @@
     <div
       class="gap-9 md:flex justify-between items-center font-urbanist font-bold text-base text-black-525"
     >
-      <span class="cursor-pointer" [routerLink]="['/about-us']">About Us</span>
+      <!-- <span class="cursor-pointer border" [routerLink]="['/about-us']">About Us</span> -->
+      <button
+      mat-stroked-button
+      color="primary"
+      class="font-urbanist font-bold text-base !text-black-525 !block md:!hidden !rounded"
+      [routerLink]="['/about-us']"
+      *ngIf="isHomepage; else elseBlock"
+
+    >
+     <span> About Us </span>
+     
+    </button>
+    <ng-template 
+    #elseBlock
+    >
+      <button
+        mat-stroked-button
+        color="primary"
+        class="font-urbanist font-bold text-base !text-black-525 !block md:!hidden !rounded"
+        [routerLink]="['/']"
+      >
+       <span> Home</span>
+       
+      </button>
+    </ng-template>
+      <span class="cursor-pointer hidden md:block" [routerLink]="['/about-us']"  *ngIf="isHomepage; else elseBlockTab">About Us</span>
+       <ng-template #elseBlockTab>
+        <span class="cursor-pointer hidden md:block" [routerLink]="['/']" >Home</span>
+       </ng-template>
       <div class="w-[2px] border border-[#E5E5E5] h-7 hidden md:block"></div>
       <div class="md:flex gap-2 cursor-pointer hidden">
         <mat-icon>call</mat-icon>
@@ -13,9 +41,10 @@
       <button
         mat-stroked-button
         color="primary"
-        class="font-urbanist font-bold text-base !text-black-525 !hidden md:!block"
+        class="font-urbanist font-bold text-base !text-black-525 !hidden md:!block !rounded"
+        (click)="bookMeeting()"
       >
-      <mat-icon class="mr-2 !hidden !md:block">date_range</mat-icon>
+      <mat-icon class="mr-2">date_range</mat-icon>
        <span> Book a Meeting </span>
       </button>
     </div>

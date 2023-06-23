@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Renderer2,ElementRef, AfterViewInit } from '@angular/core';
 
 
 @Component({
@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
 })
-export class HomepageComponent implements OnInit {
-  constructor() { }
+export class HomepageComponent implements OnInit, AfterViewInit {
   centered = true;
 
   testimonials:any = []
+  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
 
   accordionData = [
     {
@@ -21,7 +21,8 @@ export class HomepageComponent implements OnInit {
     wish to deal and place the IVDs & amp; MDs in the Kingdom of Saudi
     Arabia market must have this account.
   </p>
-  <p>For more information, visit - <span class="text-[#2D6BD9]"> https://ghad.sfda.gov.sa/en </span></p>`,
+  <p>For more information, visit - <span class="text-[#2D6BD9]"> https://ghad.sfda.gov.sa/en </span></p>
+  `,
     },
     {
       num: '02',
@@ -186,4 +187,34 @@ After achieving the Authorized Representative License, the legal manufacturer sh
     </div>`
     }]
    }
+
+   ngAfterViewInit(): void {
+    const element = this.elementRef.nativeElement.querySelector('.dynamic-content');
+
+    this.renderer.listen(element, 'click', (event: Event) => {
+      this.handleClick(event);
+    });
+   }
+
+   handleClick(event:any){
+      console.log(event,"event--------------");
+      
+   }
+
+
+   visible: boolean = false;
+
+    showDialog() {
+        this.visible = true;
+    }
+
+    calendly:any
+
+    bookMeeting() {
+      this.calendly = document.getElementsByClassName('calendly-badge-content');
+  
+      for (var i = 0; i < this.calendly.length; i++) {
+        this.calendly[i].click();
+      }
+    }
 }

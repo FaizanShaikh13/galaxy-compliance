@@ -7,6 +7,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ButtonModule } from 'primeng/button';
     HomepageRoutingModule,
     MaterialModule,
     CarouselModule,
-    ButtonModule
+    ButtonModule,
+    DialogModule,
     // ComponentsModule
   ]
 })
