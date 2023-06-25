@@ -5,10 +5,11 @@ import { HeaderSectionComponent } from './header-section/header-section.componen
 import { MaterialModule } from '../material/material.module';
 import { SidebarModule } from 'primeng/sidebar';
 import { RouterModule } from '@angular/router';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
-  declarations: [FooterSectionComponent, HeaderSectionComponent],
+  declarations: [FooterSectionComponent, HeaderSectionComponent, DialogComponent],
   imports: [
     CommonModule,
     MaterialModule,

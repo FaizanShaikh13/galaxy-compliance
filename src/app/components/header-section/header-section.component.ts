@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -12,9 +12,10 @@ export class HeaderSectionComponent implements OnInit {
 
   sidebarVisible:boolean = false
   route: string = "";
-
-  constructor(location: Location, router: Router) {
+  constructor(location: Location, router: Router,private elementRef: ElementRef, private renderer: Renderer2) {
     router.events.subscribe((val) => {
+
+    
       console.log("isme aaya",location.path());
     
         if(location.path() == ""){
@@ -37,6 +38,12 @@ export class HeaderSectionComponent implements OnInit {
     for (var i = 0; i < this.calendly.length; i++) {
       this.calendly[i].click();
     }
+  }
+
+  scrollToBottom() {
+    const element = document.getElementById('footer');
+    console.log(element)
+    element?.scrollIntoView({ behavior: 'smooth' });
   }
 
 }

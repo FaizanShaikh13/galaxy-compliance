@@ -34,18 +34,20 @@
         <span class="cursor-pointer hidden md:block" [routerLink]="['/']" >Home</span>
        </ng-template>
       <div class="w-[2px] border border-[#E5E5E5] h-7 hidden md:block"></div>
-      <div class="md:flex gap-2 cursor-pointer hidden">
+      <div class="md:flex gap-2 cursor-pointer hidden" (click)="scrollToBottom()">
         <mat-icon>call</mat-icon>
         <span> Contact Us</span>
       </div>
       <button
         mat-stroked-button
         color="primary"
-        class="font-urbanist font-bold text-base !text-black-525 !hidden md:!block !rounded"
+        class="font-urbanist font-bold text-base !text-black-525 !hidden md:!block !rounded !px-[16px] !py-[6px]"
         (click)="bookMeeting()"
       >
-      <mat-icon class="mr-2">date_range</mat-icon>
-       <span> Book a Meeting </span>
+      <div class="flex gap-2 items-center justify-center">
+        <img src="../../../assets/extras/calendar-days-black.svg" alt="">
+        <span> Book a Meeting </span>
+      </div>
       </button>
     </div>
     <!-- <div class="sidenav float-right md:hidden block">

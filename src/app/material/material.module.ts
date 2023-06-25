@@ -9,7 +9,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatRippleModule} from '@angular/material/core';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatExpansionModule} from '@angular/material/expansion';
-
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 const material = [
@@ -22,7 +22,8 @@ const material = [
   MatRadioModule,
   MatRippleModule,
   CdkAccordionModule,
-  MatExpansionModule
+  MatExpansionModule,
+  MatDialogModule
 ];
 
 @NgModule({

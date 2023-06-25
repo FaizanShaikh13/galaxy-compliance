@@ -1,4 +1,4 @@
-<footer class="container-custom mt-20 urbanist m-auto">
+<footer class="container-custom mt-20 urbanist m-auto" id="footer">
   <div class="container-custom footer-container">
     <!-- <div class="footer-absolute flex justify-between items-center">
       <div
@@ -49,12 +49,12 @@
       </div>
       </button>
     </div> -->
-    <div class="absolute-footer absolute  max-w-[1500px] w-[94%]">
-      <div class="relative h-[202px]">
+    <div class="absolute-footer absolute  max-w-[1500px] sm:w-[94%] w-[90%]">
+      <div class="relative h-[202px] w-[96%] sm:w-full">
         <img src="../../../assets/footer/footer-banner.png" class="w-[94%] h-full hidden sm:block" alt="">
         <img src="../../../assets/footer/mobile-banner.png" class="sm:hidden block w-[94%] h-full"  alt="">
       </div>
-      <div class="absolute top-0 w-[94%] h-full sm:px-16 px-5 flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-5">
+      <div class="absolute top-0 sm:w-[94%] w-[90%] h-full sm:px-16 px-5 flex sm:flex-row flex-col sm:justify-between justify-center items-center gap-5">
         <div class="font-urbanist text-[#fff] md:text-2xl xl:text-3xl font-semibold text-xl">
           Interested to know more? <br />
           Book a meeting with us now!
@@ -87,32 +87,8 @@
       </div>
       <div class="flex items-center social-media justify-between">
         <div>
-          <a href="#" target="Facebook">
-            <img
-              src="../../../assets/social-media/Facebook.svg"
-              alt="Facebook"
-            />
-          </a>
-        </div>
-        <div>
-          <a href="#" target="Twitter">
-            <img
-              src="../../../assets/social-media/Twitter.svg"
-              alt="Twitter"
-            />
-          </a>
-        </div>
-        <div>
-          <a href="#" target="Instagram">
-            <img
-              src="../../../assets/social-media/Instagram.svg"
-              alt="Instagram"
-            />
-          </a>
-        </div>
-        <div>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/siddiqui-shaker-41993221"
             target="LinkedIn"
           >
             <img
@@ -122,14 +98,7 @@
             />
           </a>
         </div>
-        <div>
-          <a href="#" target="Youtube">
-            <img
-              src="../../../assets/social-media/YouTube.svg"
-              alt="Youtube"
-            />
-          </a>
-        </div>
+       
       </div>
     </div>
     <div class="right-side">
@@ -185,15 +154,8 @@
     </div>
     <div class="bottom-side flex items-center justify-between">
       <div class="flex justify-between items-center left w-50 for-mobile">
-        <span class="a !text-black-525" role="button">About &nbsp;us</span>
-        <span class="b !text-black-525" role="button">Contact</span>
-        <span class="c !text-black-525" role="button"
-          >Privacy &nbsp;policy</span
-        >
-        <span class="d !text-black-525" role="button"> Sitemap</span>
-        <span class="e !text-black-525" role="button"
-          >Terms &nbsp;of &nbsp;Use</span
-        >
+        <span class="a !text-black-525" role="button" [routerLink]="['/about-us']">About &nbsp;us</span>
+       
       </div>
       <div class="flex justify-end right">© 2000-2021, All Rights Reserved</div>
     </div>

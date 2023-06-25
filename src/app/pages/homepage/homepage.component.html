@@ -9,7 +9,9 @@
     <div
       class="font-bold lg:text-[40px] lg:leading-[52px] text-center text-black-404 md:text-[36px] md:leading-[48px] text-[28px] leading-[36px]">
       Experienced & Personalized
-      <span class="text-primary relative"> <img src="../../../assets/extras/Line 1.svg" class="absolute w-full saudi-fda bottom-[-10px] sm:bottom-[-10px] md:bottom-[-15px] right-0"/>Saudi&nbsp;FDA&nbsp;IVD </span>& Medical Device
+      <span class="text-primary relative"> <img src="../../../assets/extras/Line 1.svg"
+          class="absolute w-full saudi-fda bottom-[-10px] sm:bottom-[-10px] md:bottom-[-15px] right-0" />Saudi&nbsp;FDA&nbsp;IVD
+      </span>& Medical Device
       Registration Consulting
     </div>
     <div
@@ -20,16 +22,19 @@
     </div>
     <div class="flex justify-center gap-4 xl:w-1/2 m-auto pt-7">
       <button mat-stroked-button color="primary"
-        class="font-urbanist font-bold lg:text-base md:text-sm !text-primary !rounded-md light-blue-bg px-6 py-3 h-12 sm:w-[167px] w-[160px] !border-none">
+        class="font-urbanist font-bold lg:text-base md:text-sm !text-primary !rounded-md light-blue-bg px-6 py-3 h-12 sm:w-[167px] w-[160px] !border-none" (click)="scrollToBottom()">
         <mat-icon class="mr-2">call</mat-icon>
         <span> Contact Us </span>
       </button>
       <button mat-stroked-button color="primary"
-        class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none"
-        (click)="bookMeeting()"
-        >
-        <mat-icon class="mr-2">date_range</mat-icon>
-        <span> Book a Meeting </span>
+        class="font-urbanist flex font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none"
+        (click)="bookMeeting()">
+        <div class="flex gap-2 items-center justify-center">
+          <img src="../../../assets/extras/calendar-days.svg" alt="">
+          <span> Book a Meeting </span>
+        </div>
+        <!-- <mat-icon class="mr-2">date_range</mat-icon> -->
+        
       </button>
     </div>
     <div class="mt-6">
@@ -80,8 +85,8 @@
     </div>
     <div class="flex lg:flex-row sm:flex-col flex-col justify-between items-center gap-3 text-justify">
       <div class="max-w-[600px] h-max-[410px] sm:mb-[60px] mb-[40px] lg:mb-0">
-        <img src="../../../assets/images/our_experience.png" alt="" class="hidden sm:block"/>
-        <img src="../../../assets/images//enterprise_mobile.png" alt="" class="block sm:hidden w-full"/>
+        <img src="../../../assets/images/our_experience.png" alt="" class="hidden sm:block" />
+        <img src="../../../assets/images//enterprise_mobile.png" alt="" class="block sm:hidden w-full" />
 
       </div>
       <div class="xl:w-[45%] lg:w-[55%] text-black-404 lg:text-2xl sm:text-lg font-medium">
@@ -92,9 +97,8 @@
             Devices field, we decided to alter direction.
           </li>
           <li>
-            Now, we share use our experience to help others. Our ramp up process
-            is designed to empower your Saudi FDA regulatory and Compliance team
-            and outfit them with the tools they need to succeed.
+            Now, we are sharing our experience to help others. Our ramp-up process is designed to empower your Saudi FDA
+            regulatory and compliance team and provide them with the tools they need to succeed.
           </li>
         </ul>
       </div>
@@ -121,7 +125,8 @@
               Type your name and age
               <mat-icon>account_circle</mat-icon>
             </mat-panel-description> -->
-            <div class="flex lg:flex-row flex-col font-urbanist lg:items-center items-start lg:gap-5 gap-3 lg:text-2xl sm:text-xl text-lg ">
+            <div
+              class="flex lg:flex-row flex-col font-urbanist lg:items-center items-start lg:gap-5 gap-3 lg:text-2xl sm:text-xl text-lg ">
               <div class="text-primary bg-[#E6F7FC] h-10 w-10 grid place-content-center rounded-full">
                 {{ item?.num }}
               </div>
@@ -130,19 +135,37 @@
               </div>
             </div>
           </mat-expansion-panel-header>
-          <div class="font-urbanist lg:text-xl text-lg leading-6 text-justify text-black-404 lg:ml-[60px] mt-6 lg:mt-0" [innerHTML]="item?.desc">
-            <!-- <p class="pb-6">
-              The establishment or manufacturer or Authorized Representative who
-              wish to deal and place the IVDs & amp; MDs in the Kingdom of Saudi
-              Arabia market must have this account.
-            </p>
-            <p>For more information, visit - <span class="text-[#2D6BD9]"> https://ghad.sfda.gov.sa/en </span></p> -->
+          <div class="font-urbanist lg:text-xl text-lg leading-6 text-justify text-black-404 lg:ml-[60px] mt-6 lg:mt-5">
+            <div class="" [innerHTML]="item?.desc">
+              <!-- <p class="pb-6">
+                The establishment or manufacturer or Authorized Representative who
+                wish to deal and place the IVDs & amp; MDs in the Kingdom of Saudi
+                Arabia market must have this account.
+              </p>
+              <p>For more information, visit - <span class="text-[#2D6BD9]"> https://ghad.sfda.gov.sa/en </span></p> -->
+            </div>
+            <div>
+              <span [innerHTML]="item?.linkText" class=""></span>
+              <div class="pb-6">
+                <a [href]="item?.a?.trim()" target="_blank" class="underline text-[#2D6BD9]">{{item?.a}}</a>
+              </div>
+              <div *ngIf="item?.link2">Sample 1</div>
+              <span class="text-[#2D6BD9] cursor-pointer" (click)="openDialog(item?.num)">{{item?.link}}</span>
+              <div *ngIf="item?.link2" class="pt-6">Sample 2</div>
+              <span class="text-[#2D6BD9] cursor-pointer " *ngIf="item?.link2" (click)="openDialog2(item?.num)">{{item?.link}}</span>
+
+              <!-- <a href="https://ghad.sfda.gov.sa/en ">https://ghad.sfda.gov.sa/en </a>
+               -->
+
+            </div>
           </div>
+
         </mat-expansion-panel>
       </mat-accordion>
     </div>
     <img src="../../../assets/extras/vertical-box.svg" class="absolute -bottom-10 right-[48%] hidden sm:block" alt="">
-    <img src="../../../assets/extras/vertical-mobile-bubble.svg" class="absolute -bottom-10 right-[42%] h-20 w-24 block sm:hidden " alt="">
+    <img src="../../../assets/extras/vertical-mobile-bubble.svg"
+      class="absolute -bottom-10 right-[42%] h-20 w-24 block sm:hidden " alt="">
 
   </main>
 </section>
@@ -172,17 +195,19 @@
         </ul>
       </div>
       <div class="max-w-[600px] h-max-[410px] sm:mb-14 mb-[40px] lg:mb-0">
-        <img src="../../../assets/images/our-approach.png" alt="" class="hidden sm:block"/>
-        <img src="../../../assets/images/approach_mobile.png" alt="" class="block sm:hidden w-full"/>
+        <img src="../../../assets/images/our-approach.png" alt="" class="hidden sm:block" />
+        <img src="../../../assets/images/approach_mobile.png" alt="" class="block sm:hidden w-full" />
       </div>
     </div>
     <img src="../../../assets/extras/tablet-box.svg" class="absolute -bottom-10 right-[48%] hidden sm:block" alt="">
-    <img src="../../../assets/extras/horizontal-mobile-bubble.svg" class="absolute -bottom-10 right-[42%] h-20 w-24 block sm:hidden " alt="">
+    <img src="../../../assets/extras/horizontal-mobile-bubble.svg"
+      class="absolute -bottom-10 right-[42%] h-20 w-24 block sm:hidden " alt="">
 
   </main>
 </section>
 
-<section class="background: linear-gradient(360deg, #f3fbfe 0%, #ffffff 100%)" style="background: linear-gradient(360deg, #F3FBFE 0%, rgba(243, 251, 254, 0) 100%);">
+<section class="background: linear-gradient(360deg, #f3fbfe 0%, #ffffff 100%)"
+  style="background: linear-gradient(360deg, #F3FBFE 0%, rgba(243, 251, 254, 0) 100%);">
   <main class="container-custom m-auto lg:px-[60px] sm:px-[40px] px-7 font-urbanist lg:py-[120px] py-20">
     <div class="flex justify-center gap-10 items-center sm:mb-[80px] mb-[40px]">
       <div class="w-[25%] bg-primary h-[2px] max-w-[220px] min-w-[65px]"></div>
@@ -257,8 +282,7 @@
                 Mr. Hussein Fares
               </li>
               <li class="text-[#6F6C90] text-lg">
-                CEO at Abdulla Fouad Medical Supplies and Service Co. Saudi
-                Arabia
+                CEO at Abdulla Fouad Group
               </li>
             </ul>
             <!-- <div class="flex justify-start gap-4 m-auto pt-7">
@@ -281,8 +305,8 @@
             </div> -->
           </div>
           <div class="max-w-[570px] h-max-[410px]">
-            <img src="../../../assets/images/testimonials.png" alt="" class="hidden sm:block"/>
-            <img src="../../../assets/images/testimonials_mobile.png" alt="" srcset="" class="block sm:hidden w-full"/>
+            <img src="../../../assets/images/testimonials.png" alt="" class="hidden sm:block" />
+            <img src="../../../assets/images/testimonials_mobile.png" alt="" srcset="" class="block sm:hidden w-full" />
           </div>
         </div>
       </div>
@@ -316,17 +340,18 @@
         </ul>
         <div class="flex justify-center lg:justify-start gap-4 m-auto pt-7">
           <button mat-stroked-button color="primary"
-        class="font-urbanist font-bold lg:text-base md:text-sm !text-primary !rounded-md light-blue-bg px-6 py-3 h-12 sm:w-[167px] w-[160px] !border-none">
-        <mat-icon class="mr-2">call</mat-icon>
-        <span> Contact Us </span>
-      </button>
-      <button mat-stroked-button color="primary"
-        class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none"
-        (click)="bookMeeting()"
-        >
-        <mat-icon class="mr-2">date_range</mat-icon>
-        <span> Book a Meeting </span>
-      </button>
+            class="font-urbanist font-bold lg:text-base md:text-sm !text-primary !rounded-md light-blue-bg px-6 py-3 h-12 sm:w-[167px] w-[160px] !border-none" (click)="scrollToBottom()">
+            <mat-icon class="mr-2">call</mat-icon>
+            <span> Contact Us </span>
+          </button>
+          <button mat-stroked-button color="primary"
+            class="font-urbanist font-bold lg:text-base md:text-sm !text-[#fff] bg-[#03A2B5] !rounded-md px-6 py-3 h-12 sm:w-[203px] w-[160px] !border-none"
+            (click)="bookMeeting()">
+            <div class="flex gap-2 items-center justify-center">
+              <img src="../../../assets/extras/calendar-days.svg" alt="">
+              <span> Book a Meeting </span>
+            </div>
+          </button>
         </div>
       </div>
     </div>
