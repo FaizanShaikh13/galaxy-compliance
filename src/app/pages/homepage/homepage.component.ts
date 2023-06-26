@@ -98,7 +98,7 @@ After achieving the Authorized Representative License, the legal manufacturer sh
     {
       num: '08',
       title: 'Low Risk Med. Dev. Registration for Class 1 non-sterile, non-measurable',
-      desc: '<p>TThis activity is optional, and Saudi FDA has the right to accept the request; otherwise, Saudi FDA will direct the request for MDMA.</p>',
+      desc: '<p>This activity is optional, and Saudi FDA has the right to accept the request; otherwise, Saudi FDA will direct the request for MDMA.</p>',
     },
     {
       num: '09',
