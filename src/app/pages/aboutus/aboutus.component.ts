@@ -18,7 +18,7 @@ export class AboutusComponent implements OnInit {
         window.open("/assets/pdfs/Man of Div AFMS.pdf", '_blank');
         break
       case 3:
-        window.open("/assets/pdfs/AFMS Ser.Cert 2009 to 2022.pdf", '_blank');
+        window.open("/assets/pdfs/Toastmasters certificate.jpg", '_blank');
         break
       case 4:
         window.open("/assets/pdfs/SFDA Cert.pdf", '_blank');
