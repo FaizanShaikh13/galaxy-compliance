@@ -1,10 +1,35 @@
-.light-blue-bg{
-    background-color: rgba(4, 173, 219, 0.1);;
+.light-blue-bg {
+  background-color: rgba(4, 173, 219, 0.1);
 }
 ::ng-deep .accordion > .panel {
-    background-color: transparent !important;
-    box-shadow: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
+
+:host ::ng-deep .p-carousel {
+  .p-carousel-indicators{
+    height: 10px !important;
+    // background:red;
+    display: flex;
+    gap: 30px;
+    .p-carousel-indicator{
+        width: 50px;
+        background: rgba(4, 173, 219, 0.10); 
+        button{
+          width: 100% !important;
+          height: 100% !important;
+        }
+    }
+    .p-highlight{
+      background-color: #03A2B5 !important;
+    }
+  }
+}
+// :host ::ng-deep .p-carousel-prev{
+//     width: 100px;
+//     height: 100px;
+//     background: red;
+// }
 
 // .saudi-fda{
 //     right: 0;
