@@ -14,13 +14,9 @@ export class HeaderSectionComponent implements OnInit {
   route: string = "";
   constructor(location: Location, router: Router,private elementRef: ElementRef, private renderer: Renderer2) {
     router.events.subscribe((val) => {
-
-    
-      console.log("isme aaya",location.path());
     
         if(location.path() == ""){
           this.isHomepage = true
-          console.log(this.isHomepage,"------------");
         }else {
           this.isHomepage = false
         }

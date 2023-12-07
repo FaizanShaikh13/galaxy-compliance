@@ -6,7 +6,8 @@ import { MaterialModule } from '../material/material.module';
 import { SidebarModule } from 'primeng/sidebar';
 import { RouterModule } from '@angular/router';
 import { DialogComponent } from './dialog/dialog.component';
-
+import {ToastModule} from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [FooterSectionComponent, HeaderSectionComponent, DialogComponent],
@@ -14,8 +15,10 @@ import { DialogComponent } from './dialog/dialog.component';
     CommonModule,
     MaterialModule,
     SidebarModule,
-    RouterModule
+    RouterModule,
+    ToastModule,
   ],
+  providers:[MessageService],
   exports:[FooterSectionComponent,HeaderSectionComponent]
 })
 export class ComponentsModule { }
