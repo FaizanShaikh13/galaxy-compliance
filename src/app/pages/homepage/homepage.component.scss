@@ -7,21 +7,21 @@
 }
 
 :host ::ng-deep .p-carousel {
-  .p-carousel-indicators{
+  .p-carousel-indicators {
     height: 10px !important;
     // background:red;
     display: flex;
     gap: 30px;
-    .p-carousel-indicator{
-        width: 50px;
-        background: rgba(4, 173, 219, 0.10); 
-        button{
-          width: 100% !important;
-          height: 100% !important;
-        }
+    .p-carousel-indicator {
+      width: 50px;
+      background: rgba(4, 173, 219, 0.1);
+      button {
+        width: 100% !important;
+        height: 100% !important;
+      }
     }
-    .p-highlight{
-      background-color: #03A2B5 !important;
+    .p-highlight {
+      background-color: #03a2b5 !important;
     }
   }
 }
@@ -40,3 +40,36 @@
 //     border-radius: 20px;
 //     // border-radius: 50%/100px 100px 0 0;
 // }
+
+.partner-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 30px;
+}
+
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  min-width: 100%;
+  animation: scroll-x 15s linear infinite;
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 30px));
+  }
+}
